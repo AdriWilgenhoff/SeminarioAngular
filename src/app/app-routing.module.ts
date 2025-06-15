@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PreciosComponent } from './components/precios/precios.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MenusComponent } from './components/menus/menus.component';
+
+const routes: Routes = [
+  { path: '', component: InicioComponent },
+  { path: 'menus', component: MenusComponent },
+  { path: 'precios', component: PreciosComponent },
+  { path: 'reservas', component: ReservasComponent },
+  { path: '**', component: NotFoundComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

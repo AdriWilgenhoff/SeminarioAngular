@@ -1,0 +1,14 @@
+<div class="container">
+<h2>Reserva Confirmada</h2>
+
+<p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
+<p><strong>Email:</strong> {{ reserva.email }}</p>
+<p><strong>Cédula:</strong> {{ reserva.cedula }}</p>
+<p><strong>Fecha:</strong> {{ reserva.fecha }}</p>
+<p><strong>Hora:</strong> {{ reserva.hora }}</p>
+<p><strong>Personas:</strong> {{ reserva.personas }}</p>
+<p><strong>Vista:</strong> {{ reserva.vista }}</p>
+<p><strong>Comentarios:</strong> {{ reserva.comentarios || 'Sin comentarios' }}</p>
+
+<button (click)="volver.emit()">Volver</button>
+</div>

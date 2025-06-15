@@ -1,0 +1,10 @@
+<div *ngIf="!mostrarConfirmacion">
+  <app-form-reserva (reservaEnviada)="onReservaEnviada($event)"></app-form-reserva>
+</div>
+
+<div *ngIf="mostrarConfirmacion">
+  <app-mi-reserva
+    [reserva]="datosReserva"
+    (volver)="volverAlFormulario()"
+  ></app-mi-reserva>
+</div>

@@ -1,0 +1,347 @@
+/* You can add global styles to this file, and also import other style files */
+/* ESTILOS GENERALES - INICIO*/
+
+body {
+    margin: 0;
+    font-family: 'Avenir', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.btnEstandar{
+  background-color: #92fcce;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px; 
+  transition-duration: 0.6s;
+}
+
+.btnEstandar:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+.btnEstandar:not(:disabled):hover{
+    background-color: #007441;
+    color: white;
+}
+
+input, select, textarea {
+  padding: 7px 20px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+select:focus, input:focus, textarea:focus {
+  border: 2px solid #007441;
+  outline: none;
+}
+
+input[type="radio"]{
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    accent-color: #007441;
+}
+
+/* ESTILOS GENERALES - INICIO*/
+
+span{
+    font-size: larger;
+}
+
+/* BARRA DE NAVEGACION */
+
+.main-nav {
+    background-color: #92fcce;
+    display: none;
+}
+
+.main-nav.open{
+    display: block;
+}
+
+.main-nav > ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-nav > ul > li {
+    list-style: none;
+}
+
+.route{
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 16px;
+    cursor: pointer;
+    transition-duration: 0.6s;
+} 
+
+#btn-open, #btn-change-mode  {
+    margin-right: 16px;
+    height: 25px;
+    width: 25px;
+    background-size: cover;
+}
+
+#btn-open {
+    background-image: url(../images/menu-burger.svg);
+}
+
+#btn-change-mode {
+    background-image: url(../images/change-mode.svg);
+}
+
+/* HEADER - FIN*/
+
+/* MAIN -  INICIO */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin: 16px auto;
+    width: 85%;
+    text-align: justify;
+    line-height: 1.5;
+    gap: 16px;
+}
+
+.main-content ul{
+    margin-top: 0%;
+}
+
+/* MAIN -  FIN */
+
+
+/* PRECIOS - INICIO */
+
+.section-table, .section-filter-table, .btns-agregar{
+    text-align: center;
+    overflow-x: auto;
+}
+
+table {
+    background-color: #92fcce;
+    margin: auto;
+    table-layout: fixed;
+    padding: 0.2%;
+}
+
+td, th {
+    border: 1px solid #daffef;
+    padding: 10px;
+    background-color: #daffef;
+    align-content: center;
+}
+
+th {
+    background-color: #92fcce;
+}
+
+.section-views{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.section-table table button {
+    margin-right: 8px;
+    height: 25px;
+    width: 25px;
+    background-size: cover;
+}
+
+td button:last-child{
+    margin-right: 0px;
+}
+
+.btn-edit {
+    background-image: url(../images/edit-button.svg);
+}
+
+.btn-borrar {
+    background-image: url(../images/delete-button.svg);
+}
+
+.section-form-add-edit div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 2%; 
+}
+
+.section-form-add-edit div button{
+    margin: 1%; 
+}
+
+/* PRECIOS - FIN */
+
+/* RESERVAS - INICIO */
+
+.form-estandar, .div-captcha-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form label,  .div-radio-views, .div-captcha-form, #label-captcha{
+    margin-top: 1%;
+}
+
+#label-captcha {
+    text-align: center;
+    font-size: 18px;
+    padding: 7px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#input-captcha{ 
+   text-align: center;
+}
+
+#p-msg-reserva{
+    margin-top: 2%;
+    text-align: center;
+    font-weight: bolder ;
+    background-color: #92fcce;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.p-msg-reserva-hidden{
+    visibility: hidden;
+}
+
+/* RESERVAS - FIN */
+
+/* MENUS - INICIO */
+
+.item-menu{
+    border: 1px solid #92fcce;
+    border-radius: 15px;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-menu h3, .item-menu h4 {
+    margin: 0 0 16px;
+    padding: 8px 0;
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.item-menu h3 {
+    background-color: #daffef;
+}
+
+.item-menu li {
+    text-align: left;
+    margin: 0 12px 0 0;
+}
+
+.item-menu p {
+    margin: 0% 3.5%;
+}
+
+.display-none{
+    display: none;
+}
+
+/* MENUS - FIN */
+
+/* MEDIA QUERIES */
+
+@media (width >= 768px) {
+    .main-nav > ul , .section-views, .div-captcha-form, .section-form-add-edit div{
+        flex-direction: row;
+    }
+
+    section.main-content{
+        display: grid;
+        grid-template-areas: 
+            "menuExclusivo menuTradicional menuInfantil"
+            "menuExclusivo menuTradicional bebidas";
+    }
+
+    .item-menu-exclusivo{
+        grid-area: menuExclusivo;
+    }
+    
+    .item-menu-tradicional{
+        grid-area: menuTradicional;
+    }
+
+    .item-menu-infantil{
+        grid-area: menuInfantil;
+    }
+
+    .item-menu-bebidas{
+        grid-area: bebidas;
+    }
+
+    #btn-open {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .img-principal{
+        width: 50%;
+        margin: auto;
+    }
+}
+
+/* MODO DARK -  INICIO */
+
+.dark, .dark th, .dark td, .dark table, .dark .item-menu h3, .dark .main-nav, 
+.dark header, .dark #label-captcha, .dark #p-msg-reserva, .dark .route, .dark .btnEstandar{
+    background-color: black;
+    color: white;
+}
+
+.dark th, .dark td, .dark table, .dark #label-captcha, .dark .item-menu h3, .dark .item-menu, .dark #p-msg-reserva, .dark .btnEstandar{
+    border: 1px solid white;
+}
+
+.dark .main-nav{
+    border-top: 1px solid white;
+}
+
+.dark-border-bottom, .dark .main-nav {
+    border-bottom: 1px solid white;
+}
+
+.dark .route:hover, .dark .btnEstandar:not(:disabled):hover{
+    background-color: white;
+    color: black;
+}
+
+.dark input[type="radio"]:checked {
+    accent-color: black;
+}
+
+.dark select:focus, .dark input:focus, .dark textarea:focus {
+    border: 2px solid black;
+}
+
+/* MODO DARK -  FIN */

@@ -1,0 +1,8 @@
+<h2>Menú del Restaurante</h2>
+
+<div *ngFor="let plato of platos" class="plato">
+  <h3>{{ plato.nombre }}</h3>
+  <p>{{ plato.descripcion }}</p>
+  <p><strong>Precio:</strong> ${{ plato.precio }}</p>
+  <hr />
+</div>

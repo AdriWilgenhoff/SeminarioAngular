@@ -1,0 +1,90 @@
+header {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d9fff0; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.logo h1 span {
+  font-weight: 900;
+}
+
+.img-logo {
+  height: 40px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Menú principal */
+.main-nav {
+  background-color: #8effd1;  
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.main-nav li a {
+  color: #240052;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.main-nav li a:hover {
+  color: #000;
+}
+
+.main-nav li a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #240052;
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.main-nav li a:hover::after {
+  width: 100%;
+}

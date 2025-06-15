@@ -1,0 +1,48 @@
+<h2>Reserva</h2>
+
+<div class="form-container">
+<form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" id="form-reserve" class="form-estandar">
+  <label for="fullName">Nombre y apellido</label>
+  <input type="text" formControlName="nombre" />
+
+  <label for="email">Email</label>
+  <input type="email" formControlName="email" />
+
+  <label for="id">Cédula/Pasaporte</label>
+  <input type="text" formControlName="cedula" />
+
+  <label for="reserveDate">Seleccione una fecha</label>
+  <input type="date" formControlName="fecha" />
+
+  <label for="reserveTime">Seleccione un horario</label>
+  <select formControlName="hora">
+    <optgroup label="Almuerzo">
+      <option value="lunch1">12:00 a 13:30</option>
+      <option value="lunch2">13:30 a 15:00</option>
+    </optgroup>
+    <optgroup label="Cena">
+      <option value="dinner1">20:00 a 21:30</option>
+      <option value="dinner2">21:30 a 23:00</option>
+    </optgroup>
+  </select>
+
+  <label for="quantityPerson">Cantidad de personas</label>
+  <input type="number" formControlName="personas" min="1" max="6" />
+
+  <div class="div-radio-views">
+    <label>
+      <input type="radio" value="interior" formControlName="vista" />
+      Vista interior
+    </label>
+    <label>
+      <input type="radio" value="exterior" formControlName="vista" />
+      Vista exterior
+    </label>
+  </div>
+
+  <label for="comments">Pedido especial al Chef</label>
+  <textarea formControlName="comentarios" cols="15" rows="5"></textarea>
+
+  <button type="submit" class="btnEstandar" [disabled]="reservaForm.invalid">RESERVAR</button>
+</form>
+</div>
