@@ -12,23 +12,32 @@ import { ReservasService } from 'src/app/services/reservas.service';
 export class FormReservaComponent {
   @Output() reservaEnviada = new EventEmitter<Reserva>();
   reservaForm: FormGroup;
+  minFecha: string;
 
   constructor(
     private fb: FormBuilder,
     private reservasService: ReservasService,
     private toastr: ToastrService
   ) {
-    this.reservaForm = this.fb.group({
-      nombre: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      cedula: ['', Validators.required],
-      fecha: ['', Validators.required],
-      hora: ['', Validators.required],
-      personas: ['', [Validators.required, Validators.min(1), Validators.max(6)]],
-      vista: ['interior', Validators.required],
-      comentarios: ['']
-    });
+    const hoy = new Date();
+    this.minFecha = hoy.toISOString().split('T')[0];
+  
+    this.reservaForm = this.crearFormulario();
   }
+
+  private crearFormulario(): FormGroup {
+  return this.fb.group({
+    nombre: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    cedula: ['', Validators.required],
+    fecha: ['', Validators.required],
+    hora: ['', Validators.required],
+    personas: ['', [Validators.required, Validators.min(1), Validators.max(6)]],
+    vista: ['interior', Validators.required],
+    comentarios: ['']
+  });
+}
+
 
  onSubmit() {
   if (this.reservaForm.valid) {

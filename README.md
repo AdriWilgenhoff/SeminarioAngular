@@ -6,7 +6,7 @@ Este es el proyecto final del Seminario Angular 2025.
 Aplicación SPA para un restaurante, con páginas de inicio, menú, precios y reservas.
 
 ## Datos del estudiante
-- **Nombre y Apellido:** [TU NOMBRE]
+- **Nombre y Apellido:** Adrian Ezequiel Wilgenhoff
 - **DNI:** [TU DNI]
 - **Email:** [TU EMAIL]
 - **Sede:** [TU SEDE]
@@ -18,4 +18,4 @@ ng serve
 ```
 
 ## StackBlitz
-Una vez subido, incluir el link aquí.
+https://stackblitz.com/~/github.com/AdriWilgenhoff/SeminarioAngular

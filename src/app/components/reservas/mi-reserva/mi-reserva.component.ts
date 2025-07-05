@@ -9,4 +9,9 @@ import { Reserva } from 'src/app/interfaces/reserva.interface';
 export class MiReservaComponent {
   @Input() reserva!: Reserva;
   @Output() volver = new EventEmitter<void>();
+
+  volverAlFormulario() {
+    this.volver.emit();
+  }
+  
 }
