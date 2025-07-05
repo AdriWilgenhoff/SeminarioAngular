@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { ListaReservasComponent } from './lista-reservas/lista-reservas.component';
 
 @NgModule({
   declarations: [
     FormReservaComponent,
     MiReservaComponent,
     ReservasComponent,
-    MiReservaComponent
+    MiReservaComponent,
+    ListaReservasComponent
   ],
   imports: [
     CommonModule,

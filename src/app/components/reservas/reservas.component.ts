@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Reserva } from 'src/app/interfaces/reserva.interface';
 
 @Component({
@@ -9,7 +10,7 @@ import { Reserva } from 'src/app/interfaces/reserva.interface';
 export class ReservasComponent {
   mostrarConfirmacion = false;
   datosReserva!: Reserva;
-
+  constructor(private router: Router) {}
   onReservaEnviada(reserva: Reserva) {
     this.datosReserva = reserva;
     this.mostrarConfirmacion = true;
@@ -17,5 +18,9 @@ export class ReservasComponent {
 
   volverAlFormulario() {
     this.mostrarConfirmacion = false;
+  }
+
+  irANuevaReserva() {
+    this.router.navigate(['/reservas/nueva']); 
   }
 }

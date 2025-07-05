@@ -1,0 +1,59 @@
+<table class="table tabla-reservas">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Personas</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reservas">
+      <td *ngIf="idEditando !== reserva.id">{{ reserva.nombre }}</td>
+      <td *ngIf="idEditando === reserva.id">
+        <input [formControl]="nombreControl" class="form-control" />
+      </td>
+
+      <td *ngIf="idEditando !== reserva.id">{{ reserva.fecha | date:'shortDate' }}</td>
+      <td *ngIf="idEditando === reserva.id">
+        <input type="date" [formControl]="fechaControl" class="form-control" />
+      </td>
+
+      <td *ngIf="idEditando !== reserva.id">{{ reserva.hora }}</td>
+      <td *ngIf="idEditando === reserva.id">
+        <input type="time" [formControl]="horaControl" class="form-control" />
+      </td>
+
+      <td *ngIf="idEditando !== reserva.id">{{ reserva.personas }}</td>
+      <td *ngIf="idEditando === reserva.id">
+        <input type="number" min="1" [formControl]="personasControl" class="form-control" />
+      </td>
+
+      <td>
+        <button *ngIf="idEditando !== reserva.id" class="btn btn-sm btn-icon-only"
+        (click)="editarReserva(reserva)" title="Editar">
+          <i class="bi bi-pencil"></i>
+        </button>
+
+
+
+        <button *ngIf="idEditando === reserva.id" class="btn btn-sm btn-icon-only" (click)="guardarEdicion()"
+          [disabled]="formEditando?.invalid" title="Guardar">
+          <i class="bi bi-check-lg"></i>
+        </button>
+
+        <button *ngIf="idEditando === reserva.id" class="btn btn-sm btn-icon-only" (click)="cancelarEdicion()"
+          title="Cancelar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <button class="btn btn-sm btn-icon-only" (click)="eliminarReserva(reserva.id)" title="Eliminar">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

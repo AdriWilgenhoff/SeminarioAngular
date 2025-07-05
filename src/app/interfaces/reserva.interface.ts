@@ -1,4 +1,5 @@
 export interface Reserva {
+  id: number;
   nombre: string;
   email: string;
   cedula: string;
