@@ -40,6 +40,7 @@ export class FormReservaComponent {
 
 
  onSubmit() {
+  console.log(this.reservaForm)
   if (this.reservaForm.valid) {
     const datos: Reserva = this.reservaForm.value;
 
@@ -48,6 +49,7 @@ export class FormReservaComponent {
         this.toastr.success('¡Reserva enviada con éxito!');
         this.reservaForm.reset();
         this.reservaEnviada.emit(datos);
+        
       },
       error: (err) => {
         console.error('Error al enviar reserva', err);
