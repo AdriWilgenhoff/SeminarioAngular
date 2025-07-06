@@ -34,4 +34,7 @@ export class MiReservaComponent implements OnInit {
   volverALaLista() {
     this.router.navigate(['/reservas']);
   }
+  volverAlFormulario(){
+    this.router.navigate(['/reservas/nueva']);
+  }
 }
