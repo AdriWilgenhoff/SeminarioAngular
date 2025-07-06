@@ -11,8 +11,12 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
+
+form > div.form-group {
+  margin-bottom: 1.2rem;
+}
+
 
 label {
   display: block;
@@ -122,4 +126,10 @@ h2 {
   border-left: 6px solid #0d6efd; /* barra vertical azul */
   box-sizing: border-box;
   user-select: none;
+}
+
+button.btn-outline-dark {
+  font-weight: 600;
+  padding: 8px 14px;
+  font-size: 1rem;
 }

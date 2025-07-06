@@ -1,16 +1,24 @@
-<div class="container mt-4">
-<h2>Detalle de mi reserva</h2>
+<div class="container my-5">
+  <h2 class="mb-4 fw-bold pb-2">Detalle de mi reserva</h2>
 
-<p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
-<p><strong>Email:</strong> {{ reserva.email }}</p>
-<p><strong>Cédula:</strong> {{ reserva.cedula }}</p>
-<p><strong>Fecha:</strong> {{ reserva.fecha }}</p>
-<p><strong>Hora:</strong> {{ reserva.hora }}</p>
-<p><strong>Personas:</strong> {{ reserva.personas }}</p>
-<p><strong>Vista:</strong> {{ reserva.vista }}</p>
-<p><strong>Comentarios:</strong> {{ reserva.comentarios || 'Sin comentarios' }}</p>
+  <div class="card shadow-sm p-4">
+    <p class="mb-2"><strong>Nombre:</strong> {{ reserva.nombre }}</p>
+    <p class="mb-2"><strong>Email:</strong> {{ reserva.email }}</p>
+    <p class="mb-2"><strong>Cédula:</strong> {{ reserva.cedula }}</p>
+    <p class="mb-2"><strong>Fecha:</strong> {{ reserva.fecha }}</p>
+    <p class="mb-2"><strong>Hora:</strong> {{ reserva.hora }}</p>
+    <p class="mb-2"><strong>Personas:</strong> {{ reserva.personas }}</p>
+    <p class="mb-2"><strong>Vista:</strong> {{ reserva.vista }}</p>
+    <p class="mb-4"><strong>Comentarios:</strong> {{ reserva.comentarios || 'Sin comentarios' }}</p>
 
-<button (click)="volverAlFormulario()">Crear otra</button>
-<button (click)="volverALaLista()">Ver todas</button>
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-primary" (click)="volverAlFormulario()">
+        <i class="bi bi-plus-circle me-1"></i> Crear otra
+      </button>
 
+      <button class="btn btn-outline-secondary" (click)="volverALaLista()">
+        <i class="bi bi-list-ul me-1"></i> Ver todas
+      </button>
+    </div>
+  </div>
 </div>

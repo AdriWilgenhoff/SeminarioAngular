@@ -1,76 +1,86 @@
-<button type="button" class="btn btn-secondary ms-2" (click)="volver()">
-  Volver a la lista
-</button>
+<div class="container my-4">
+  <button type="button" class="btn btn-outline-dark d-inline-flex align-items-center gap-2" (click)="volver()">
+    <i class="bi bi-arrow-left"></i> Volver a la lista
+  </button>
+</div>
+
+
 <h2>Nueva reserva</h2>
 
 <div class="form-container">
   <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" id="form-reserve" class="form-estandar">
-    <label for="fullName">Nombre y apellido</label>
-    <input type="text" formControlName="nombre" />
-    <div *ngIf="reservaForm.get('nombre')?.touched && reservaForm.get('nombre')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('nombre')?.errors?.['required']">
-        El nombre es obligatorio
-      </small>
+    <div class="form-group">
+      <label for="fullName">Nombre y apellido</label>
+      <input type="text" formControlName="nombre" />
+      <div *ngIf="reservaForm.get('nombre')?.touched && reservaForm.get('nombre')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('nombre')?.errors?.['required']">
+          El nombre es obligatorio
+        </small>
+      </div>
     </div>
-
-    <label for="email">Email</label>
-    <input type="email" formControlName="email" />
-    <div *ngIf="reservaForm.get('email')?.touched && reservaForm.get('email')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('email')?.errors?.['required']">
-        El email es obligatorio
-      </small>
-      <small class="error" *ngIf="reservaForm.get('email')?.errors?.['email']">
-        El formato del email no es válido
-      </small>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" />
+      <div *ngIf="reservaForm.get('email')?.touched && reservaForm.get('email')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('email')?.errors?.['required']">
+          El email es obligatorio
+        </small>
+        <small class="error" *ngIf="reservaForm.get('email')?.errors?.['email']">
+          El formato del email no es válido
+        </small>
+      </div>
     </div>
-
-    <label for="id">Cédula/Pasaporte</label>
-    <input type="text" formControlName="cedula" />
-    <div *ngIf="reservaForm.get('cedula')?.touched && reservaForm.get('cedula')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('cedula')?.errors?.['required']">
-        Este campo es obligatorio
-      </small>
+    <div class="form-group">
+      <label for="id">Cédula/Pasaporte</label>
+      <input type="text" formControlName="cedula" />
+      <div *ngIf="reservaForm.get('cedula')?.touched && reservaForm.get('cedula')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('cedula')?.errors?.['required']">
+          Este campo es obligatorio
+        </small>
+      </div>
     </div>
-
-    <label for="reserveDate">Seleccione una fecha</label>
-    <input type="date" formControlName="fecha" [min]="minFecha" />
-    <div *ngIf="reservaForm.get('fecha')?.touched && reservaForm.get('fecha')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('fecha')?.errors?.['required']">
-        Seleccione una fecha
-      </small>
+    <div class="form-group">
+      <label for="reserveDate">Seleccione una fecha</label>
+      <input type="date" formControlName="fecha" [min]="minFecha" />
+      <div *ngIf="reservaForm.get('fecha')?.touched && reservaForm.get('fecha')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('fecha')?.errors?.['required']">
+          Seleccione una fecha
+        </small>
+      </div>
     </div>
-
-    <label for="reserveTime">Seleccione un horario</label>
-    <select formControlName="hora">
-      <optgroup label="Almuerzo">
-        <option value="lunch1">12:00 a 13:30</option>
-        <option value="lunch2">13:30 a 15:00</option>
-      </optgroup>
-      <optgroup label="Cena">
-        <option value="dinner1">20:00 a 21:30</option>
-        <option value="dinner2">21:30 a 23:00</option>
-      </optgroup>
-    </select>
-    <div *ngIf="reservaForm.get('hora')?.touched && reservaForm.get('hora')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('hora')?.errors?.['required']">
-        Seleccione un horario
-      </small>
+    <div class="form-group">
+      <label for="reserveTime">Seleccione un horario</label>
+      <select formControlName="hora">
+        <optgroup label="Almuerzo">
+          <option value="lunch1">12:00 a 13:30</option>
+          <option value="lunch2">13:30 a 15:00</option>
+        </optgroup>
+        <optgroup label="Cena">
+          <option value="dinner1">20:00 a 21:30</option>
+          <option value="dinner2">21:30 a 23:00</option>
+        </optgroup>
+      </select>
+      <div *ngIf="reservaForm.get('hora')?.touched && reservaForm.get('hora')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('hora')?.errors?.['required']">
+          Seleccione un horario
+        </small>
+      </div>
     </div>
-
-    <label for="quantityPerson">Cantidad de personas</label>
-    <input type="number" formControlName="personas" min="1" max="6" />
-    <div *ngIf="reservaForm.get('personas')?.touched && reservaForm.get('personas')?.invalid">
-      <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['required']">
-        Este campo es obligatorio
-      </small>
-      <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['min']">
-        Mínimo 1 persona
-      </small>
-      <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['max']">
-        Máximo 6 personas
-      </small>
+    <div class="form-group">
+      <label for="quantityPerson">Cantidad de personas</label>
+      <input type="number" formControlName="personas" min="1" max="6" />
+      <div *ngIf="reservaForm.get('personas')?.touched && reservaForm.get('personas')?.invalid">
+        <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['required']">
+          Este campo es obligatorio
+        </small>
+        <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['min']">
+          Mínimo 1 persona
+        </small>
+        <small class="error" *ngIf="reservaForm.get('personas')?.errors?.['max']">
+          Máximo 6 personas
+        </small>
+      </div>
     </div>
-
 
     <div class="div-radio-views">
       <label>
@@ -88,10 +98,10 @@
       </small>
     </div>
 
-
-    <label for="comments">Pedido especial al Chef</label>
-    <textarea formControlName="comentarios" cols="15" rows="5"></textarea>
-
+    <div class="form-group">
+      <label for="comments">Pedido especial al Chef</label>
+      <textarea formControlName="comentarios" cols="15" rows="5"></textarea>
+    </div>
     <button type="submit" class="btnEstandar" [disabled]="reservaForm.invalid">Reservar</button>
   </form>
 </div>
