@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Reserva } from 'src/app/interfaces/reserva.interface';
 import { ReservasService } from 'src/app/services/reservas.service';
@@ -17,14 +18,17 @@ export class FormReservaComponent {
   constructor(
     private fb: FormBuilder,
     private reservasService: ReservasService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
     const hoy = new Date();
     this.minFecha = hoy.toISOString().split('T')[0];
   
     this.reservaForm = this.crearFormulario();
   }
-
+  ngOnInit() {
+  }
+  
   private crearFormulario(): FormGroup {
   return this.fb.group({
     nombre: ['', Validators.required],
@@ -38,18 +42,20 @@ export class FormReservaComponent {
   });
 }
 
+volver(){
+  this.router.navigate(['/reservas']); 
+}
 
  onSubmit() {
-  console.log(this.reservaForm)
   if (this.reservaForm.valid) {
     const datos: Reserva = this.reservaForm.value;
 
     this.reservasService.hacerReserva(datos).subscribe({
       next: () => {
+        console.log(datos, "datos")
         this.toastr.success('¡Reserva enviada con éxito!');
         this.reservaForm.reset();
-        this.reservaEnviada.emit(datos);
-        
+        this.router.navigate(['/reservas/mi-reserva', datos.id]); 
       },
       error: (err) => {
         console.error('Error al enviar reserva', err);

@@ -10,7 +10,9 @@ import { Reserva } from 'src/app/interfaces/reserva.interface';
 export class ReservasComponent {
   mostrarConfirmacion = false;
   datosReserva!: Reserva;
+  
   constructor(private router: Router) {}
+
   onReservaEnviada(reserva: Reserva) {
     this.datosReserva = reserva;
     this.mostrarConfirmacion = true;

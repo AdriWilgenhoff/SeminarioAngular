@@ -1,5 +1,5 @@
 <div class="container">
-<h2>Mi reserva</h2>
+<h2>Detalle de mi reserva</h2>
 
 <p><strong>Nombre:</strong> {{ reserva.nombre }}</p>
 <p><strong>Email:</strong> {{ reserva.email }}</p>
@@ -10,5 +10,7 @@
 <p><strong>Vista:</strong> {{ reserva.vista }}</p>
 <p><strong>Comentarios:</strong> {{ reserva.comentarios || 'Sin comentarios' }}</p>
 
-<button (click)="volverAlFormulario()">Volver</button>
+<button (click)="volverAlFormulario()">Crear otra</button>
+<button (click)="volverAlFormulario()">Ver todas</button>
+
 </div>

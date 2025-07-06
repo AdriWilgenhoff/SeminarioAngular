@@ -5,12 +5,6 @@
       <i class="bi bi-plus me-2"></i> Nueva Reserva
     </button>
   </div>
+  <app-lista-reservas></app-lista-reservas>
 
-  <div *ngIf="!mostrarConfirmacion">
-    <app-form-reserva (reservaEnviada)="onReservaEnviada($event)"></app-form-reserva>
-  </div>
-
-  <div *ngIf="mostrarConfirmacion">
-    <app-mi-reserva [reserva]="datosReserva" (volver)="volverAlFormulario()"></app-mi-reserva>
-  </div>
 </div>

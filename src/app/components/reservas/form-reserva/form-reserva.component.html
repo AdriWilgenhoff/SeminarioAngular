@@ -1,4 +1,7 @@
-<h2>Mi reserva</h2>
+<button type="button" class="btn btn-secondary ms-2" (click)="volver()">
+  Volver a la lista
+</button>
+<h2>Nueva reserva</h2>
 
 <div class="form-container">
   <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" id="form-reserve" class="form-estandar">

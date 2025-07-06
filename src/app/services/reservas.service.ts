@@ -15,6 +15,11 @@ export class ReservasService {
     return this.http.get<Reserva[]>(this.apiUrl);
   }
 
+  getReservaPorId(id: number | string): Observable<Reserva> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Reserva>(url);
+  }
+
   hacerReserva(reserva: Reserva): Observable<Reserva> {
     return this.http.post<Reserva>(this.apiUrl, reserva);
   }

@@ -7,9 +7,9 @@ Aplicación SPA para un restaurante, con páginas de inicio, menú, precios y re
 
 ## Datos del estudiante
 - **Nombre y Apellido:** Adrian Ezequiel Wilgenhoff
-- **DNI:** [TU DNI]
+- **DNI:** 33356953
 - **Email:** [TU EMAIL]
-- **Sede:** [TU SEDE]
+- **Sede:** Tandil
 
 ## Cómo ejecutar el proyecto
 ```bash

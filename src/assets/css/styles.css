@@ -2,10 +2,10 @@
 /* ESTILOS GENERALES - INICIO*/
 
 body {
-    margin: 0;
-    font-family: 'Avenir', Arial, sans-serif;
-    font-weight: bold;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 .btnEstandar{
   background-color: #92fcce;
