@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ListaReservasComponent } from './lista-reservas/lista-reservas.component';
+import { ModalConfirmacionComponent } from '../shared/modal-confirmacion/modal-confirmacion.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,15 @@ import { ListaReservasComponent } from './lista-reservas/lista-reservas.componen
     MiReservaComponent,
     ReservasComponent,
     MiReservaComponent,
-    ListaReservasComponent
+    ListaReservasComponent,
+    ModalConfirmacionComponent
   ],
   imports: [
     CommonModule,
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     ReservasComponent

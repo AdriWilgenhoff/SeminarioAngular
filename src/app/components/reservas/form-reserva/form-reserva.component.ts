@@ -51,10 +51,10 @@ volver(){
     const datos: Reserva = this.reservaForm.value;
 
     this.reservasService.hacerReserva(datos).subscribe({
-      next: () => {
+      next: (res) => {
         this.toastr.success('¡Reserva enviada con éxito!');
         this.reservaForm.reset();
-        this.router.navigate(['/reservas/mi-reserva', datos.id]); 
+        this.router.navigate(['/reservas/mi-reserva', res.id]); 
       },
       error: (err) => {
         console.error('Error al enviar reserva', err);

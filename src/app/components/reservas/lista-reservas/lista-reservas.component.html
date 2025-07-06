@@ -31,6 +31,10 @@
       </td>
 
       <td>
+        <button class="btn btn-sm btn-icon-only" (click)="verReserva(reserva.id)" title="Ver reserva">
+          <i class="bi bi-eye"></i>
+        </button>
+        
         <button *ngIf="idEditando !== reserva.id" class="btn btn-sm btn-icon-only"
         (click)="editarReserva(reserva)" title="Editar">
           <i class="bi bi-pencil"></i>
@@ -48,12 +52,19 @@
           <i class="bi bi-x-lg"></i>
         </button>
 
-        <button class="btn btn-sm btn-icon-only" (click)="eliminarReserva(reserva.id)" title="Eliminar">
+        <button class="btn btn-sm btn-icon-only" (click)="abrirModal(reserva.id)" title="Eliminar">
           <i class="bi bi-trash"></i>
-        </button>
+        </button>        
       </td>
 
     </tr>
 
   </tbody>
 </table>
+
+<app-modal-confirmacion
+  #modalConfirm
+  [mensaje]="'¿Querés eliminar esta reserva?'"
+  [titulo]="'Eliminar reserva'"
+  (confirmado)="confirmarEliminacion()"
+></app-modal-confirmacion>
