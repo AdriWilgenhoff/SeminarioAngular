@@ -83,12 +83,6 @@ textarea {
   user-select: none;
 }
 
-.div-radio-views input[type="radio"] {
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-}
-
 .btnEstandar {
   margin-top: 1rem;
   padding: 12px 0;
@@ -132,5 +126,10 @@ button.btn-outline-dark {
   font-weight: 600;
   padding: 8px 14px;
   font-size: 1rem;
+}
+input[type="radio"] {
+  appearance: radio !important; /* restaura el estilo nativo */
+  -webkit-appearance: radio !important;
+  -moz-appearance: radio !important;
 }
 
