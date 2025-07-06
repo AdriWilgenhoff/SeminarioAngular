@@ -52,7 +52,6 @@ volver(){
 
     this.reservasService.hacerReserva(datos).subscribe({
       next: () => {
-        console.log(datos, "datos")
         this.toastr.success('¡Reserva enviada con éxito!');
         this.reservaForm.reset();
         this.router.navigate(['/reservas/mi-reserva', datos.id]); 

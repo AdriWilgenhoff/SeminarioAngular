@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'precios', component: PreciosComponent },
   { path: 'reservas', component: ReservasComponent },
   { path: 'reservas/nueva', component: FormReservaComponent },
-  { path: 'reservas/:id', component: MiReservaComponent },
+  { path: 'reservas/mi-reserva/:id', component: MiReservaComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
