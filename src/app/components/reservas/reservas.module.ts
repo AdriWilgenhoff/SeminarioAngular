@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ListaReservasComponent } from './lista-reservas/lista-reservas.component';
 import { ModalConfirmacionComponent } from '../shared/modal-confirmacion/modal-confirmacion.component';
+import { EditarReservaComponent } from './editar-reserva/editar-reserva.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModalConfirmacionComponent } from '../shared/modal-confirmacion/modal-c
     ReservasComponent,
     MiReservaComponent,
     ListaReservasComponent,
-    ModalConfirmacionComponent
+    ModalConfirmacionComponent,
+    EditarReservaComponent
   ],
   imports: [
     CommonModule,

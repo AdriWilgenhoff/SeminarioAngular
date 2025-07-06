@@ -1,0 +1,118 @@
+<div class="modal fade show d-block" tabindex="-1" role="dialog" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Reserva</h5>
+        <button type="button" class="btn-close" (click)="cerrar()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" novalidate>
+          <div class="mb-2">
+            <label>Nombre y apellido</label>
+            <input class="form-control" formControlName="nombre">
+            <div *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid">
+              <small class="text-danger" *ngIf="form.get('nombre')?.errors?.['required']">
+                El nombre es obligatorio
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+              <small class="text-danger" *ngIf="form.get('email')?.errors?.['required']">
+                El email es obligatorio
+              </small>
+              <small class="text-danger" *ngIf="form.get('email')?.errors?.['email']">
+                El formato del email no es válido
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Cédula/Pasaporte</label>
+            <input class="form-control" formControlName="cedula">
+            <div *ngIf="form.get('cedula')?.touched && form.get('cedula')?.invalid">
+              <small class="text-danger" *ngIf="form.get('cedula')?.errors?.['required']">
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Fecha</label>
+            <input type="date" class="form-control" formControlName="fecha">
+            <div *ngIf="form.get('fecha')?.touched && form.get('fecha')?.invalid">
+              <small class="text-danger" *ngIf="form.get('fecha')?.errors?.['required']">
+                Seleccione una fecha
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Hora</label>
+            <select class="form-control" formControlName="hora">
+              <optgroup label="Almuerzo">
+                <option value="lunch1">12:00 a 13:30</option>
+                <option value="lunch2">13:30 a 15:00</option>
+              </optgroup>
+              <optgroup label="Cena">
+                <option value="dinner1">20:00 a 21:30</option>
+                <option value="dinner2">21:30 a 23:00</option>
+              </optgroup>
+            </select>
+            <div *ngIf="form.get('hora')?.touched && form.get('hora')?.invalid">
+              <small class="text-danger" *ngIf="form.get('hora')?.errors?.['required']">
+                Seleccione un horario
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Cantidad de personas</label>
+            <input type="number" min="1" max="6" class="form-control" formControlName="personas">
+            <div *ngIf="form.get('personas')?.touched && form.get('personas')?.invalid">
+              <small class="text-danger" *ngIf="form.get('personas')?.errors?.['required']">
+                Este campo es obligatorio
+              </small>
+              <small class="text-danger" *ngIf="form.get('personas')?.errors?.['min']">
+                Mínimo 1 persona
+              </small>
+              <small class="text-danger" *ngIf="form.get('personas')?.errors?.['max']">
+                Máximo 6 personas
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Vista</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="interior" formControlName="vista" id="vistaInterior">
+              <label class="form-check-label" for="vistaInterior">Interior</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="exterior" formControlName="vista" id="vistaExterior">
+              <label class="form-check-label" for="vistaExterior">Exterior</label>
+            </div>
+            <div *ngIf="form.get('vista')?.touched && form.get('vista')?.invalid">
+              <small class="text-danger" *ngIf="form.get('vista')?.errors?.['required']">
+                Seleccione una vista
+              </small>
+            </div>
+          </div>
+        
+          <div class="mb-2">
+            <label>Pedido especial al Chef</label>
+            <textarea class="form-control" rows="3" formControlName="comentarios"></textarea>
+          </div>
+        </form>       
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="cerrar()">Cancelar</button>
+        <button class="btn btn-primary" [disabled]="form.invalid" (click)="guardar()">Guardar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
