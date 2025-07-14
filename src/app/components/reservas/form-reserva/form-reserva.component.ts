@@ -1,14 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Reserva } from 'src/app/interfaces/reserva.interface';
 import { ReservasService } from 'src/app/services/reservas.service';
 
 @Component({
+  standalone: true,
   selector: 'app-form-reserva',
   templateUrl: './form-reserva.component.html',
-  styleUrls: ['./form-reserva.component.css']
+  styleUrls: ['./form-reserva.component.css'],
+  imports: [CommonModule, ReactiveFormsModule]
 })
 export class FormReservaComponent {
   @Output() reservaEnviada = new EventEmitter<Reserva>();

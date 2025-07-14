@@ -13,7 +13,6 @@ import { EditarReservaComponent } from './editar-reserva/editar-reserva.componen
 
 @NgModule({
   declarations: [
-    FormReservaComponent,
     MiReservaComponent,
     ReservasComponent,
     MiReservaComponent,
