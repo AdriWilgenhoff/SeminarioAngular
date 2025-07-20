@@ -8,7 +8,7 @@ Aplicación SPA para un restaurante, con páginas de inicio, menú, precios y re
 ## Datos del estudiante
 - **Nombre y Apellido:** Adrian Ezequiel Wilgenhoff
 - **DNI:** 33356953
-- **Email:** [TU EMAIL]
+- **Email:** adrianwilgenhoff@gmail.com
 - **Sede:** Tandil
 
 ## Cómo ejecutar el proyecto
