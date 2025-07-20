@@ -22,7 +22,7 @@ input, button {
 
 .tabla-reservas td,
 .tabla-reservas th {
-  padding: 0.25rem 0.5rem; /* menos padding para que quede más compacta */
+  padding: 0.25rem 0.5rem;
   vertical-align: middle;
 }
 

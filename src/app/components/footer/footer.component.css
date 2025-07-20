@@ -2,30 +2,30 @@ footer {
   background-color: #d9fff0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Cambiado de space-between para mejor distribución */
-  gap: 1rem; /* Reducido de 2rem */
-  padding: 1.5rem 2rem; /* Reducido el padding */
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
 
 footer p {
   font-weight: 600;
-  margin-bottom: 0.5rem; /* Reducido de 1rem */
+  margin-bottom: 0.5rem;
   color: #000;
-  font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+  font-size: 0.9rem;
 }
 
 footer iframe {
   border-radius: 12px;
   width: 100%;
-  max-width: 300px; /* Reducido de 350px */
-  height: 180px; /* Reducido de 200px */
+  max-width: 300px;
+  height: 180px;
   border: 0;
 }
 
 footer div { 
-  min-width: 180px; /* Reducido de 200px */
+  min-width: 180px;
   margin: 0.5rem 0;
 }
 
@@ -35,7 +35,7 @@ footer div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Añadido para mejor alineación vertical */
+  justify-content: center;
 }
 
 .div-telephone,
@@ -47,25 +47,25 @@ footer div {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0.3rem 0; /* Añadido margen vertical reducido */
+  margin: 0.3rem 0;
 }
 
 .div-telephone p,
 .div-email p {
   margin: 0;
-  font-size: 0.85rem; /* Tamaño de fuente más pequeño para info de contacto */
+  font-size: 0.85rem;
 }
 
 .div-telephone img,
 .div-email img,
 .div-payment-methods img,
 .div-socials-media img {
-  height: 20px; /* Reducido de 24px */
-  width: 20px; /* Reducido de 24px */
+  height: 20px;
+  width: 20px;
 }
 
 .div-payment-methods img {
-  margin: 0 3px; /* Reducido de 5px */
+  margin: 0 3px; 
 }
 
 .div-socials-media a img {
@@ -73,7 +73,7 @@ footer div {
 }
 
 .div-socials-media a:hover img {
-  transform: scale(1.1); /* Reducido el efecto hover de 1.2 a 1.1 */
+  transform: scale(1.1);
 }
 
 .div-ir-arriba {
@@ -84,11 +84,11 @@ footer div {
 }
 
 .div-ir-arriba img {
-  height: 30px; /* Reducido de 36px */
-  width: 30px; /* Reducido de 36px */
+  height: 30px;
+  width: 30px;
   background-color: black;
   border-radius: 50%;
-  padding: 4px; /* Reducido de 5px */
+  padding: 4px;
   transition: background-color 0.3s;
 }
 
@@ -97,25 +97,25 @@ footer div {
 }
 
 .div-ir-arriba p {
-  margin-top: 5px; /* Reducido de 8px */
-  font-size: 0.8rem; /* Reducido de 0.9rem */
+  margin-top: 5px;
+  font-size: 0.8rem;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   footer {
-    padding: 1.5rem 1rem; /* Padding más reducido en móvil */
-    gap: 0.5rem; /* Gap más pequeño en móvil */
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
   }
   
   footer div {
-    flex: 1 1 150px; /* Más estrecho en móvil */
+    flex: 1 1 150px;
     min-width: 150px;
   }
   
   footer iframe {
-    max-width: 260px; /* Más estrecho en móvil */
-    height: 160px; /* Más bajo en móvil */
+    max-width: 260px;
+    height: 160px;
   }
 }
 

@@ -1,8 +1,15 @@
-<h2>Menú del Restaurante</h2>
+<div class="title-container">
+  <h2>Menú del Restaurante</h2>
+</div>
 
-<div *ngFor="let plato of platos" class="plato">
-  <h3>{{ plato.nombre }}</h3>
-  <p>{{ plato.descripcion }}</p>
-  <p><strong>Precio:</strong> ${{ plato.precio }}</p>
-  <hr />
+<div class="menu-container">
+  <div class="platos-scroll">
+    <div *ngFor="let plato of platos" class="plato card mb-3">
+      <div class="card-body">
+        <h4 class="card-title">{{ plato.nombre }}</h4>
+        <p class="card-text">{{ plato.descripcion }}</p>
+        <p class="card-text"><strong>Precio:</strong> ${{ plato.precio }}</p>
+      </div>
+    </div>
+  </div>
 </div>

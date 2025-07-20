@@ -25,13 +25,13 @@ export class ReservasService {
   }
 
   actualizarReserva(reserva: Reserva): Observable<Reserva> {
-    // PUT /reservas/{id}
+  
     const url = `${this.apiUrl}/${reserva.id}`;
     return this.http.put<Reserva>(url, reserva);
   }
 
   eliminarReserva(id: number | string): Observable<void> {
-    // DELETE /reservas/{id}
+  
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
